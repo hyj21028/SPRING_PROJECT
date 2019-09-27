@@ -1,0 +1,59 @@
+.footer{
+    margin-top: 20vh;
+}
+
+/* 푸터 디자인 시작 */
+.footer .pag_fot {
+    text-align: left;
+    width: 70%;
+    margin: auto;
+}
+
+.footer .pag_fot .fot-meu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+/* 푸터 텍스트 메뉴 시작 */
+.footer .fot-meu .chi a {
+    float: left;
+    margin-bottom:13px;
+    padding-top: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    letter-spacing: -1px;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: dotum;
+    color: #7a7a7a !important;
+    text-decoration: none;
+}
+/* 푸터 텍스트 메뉴 끝 */
+/* 푸터 라스트 텍스트 메뉴 시작 */
+.footer .fot-meu .last-chi a {
+    float: left;
+    margin-bottom:13px;
+    padding-top: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: dotum;
+    color: #3ea3d7 !important;
+    text-decoration: none;
+}
+/* 푸터 라스트 텍스트 메뉴 끝 */
+/* 푸터 디자인 회사 정보 시작 */
+.footer p {
+    position: absolute;
+    padding-left: 243px;
+    color: #9b9b9b; 
+    line-height: 11px; 
+    font-size: 11px;
+    line-height: 15px;
+    text-align: left;
+    float: left;
+}
+/* 푸터 디자인 회사 정보 끝 */

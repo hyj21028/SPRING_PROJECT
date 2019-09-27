@@ -1,0 +1,55 @@
+
+/* 검색창 밑 카테고리 */
+#fon{
+    display: inline-block;
+    padding: 0 6px;
+    font-size: 15px;
+    letter-spacing: -1px;
+    font-weight: 600;
+}
+.cursor{
+    cursor: pointer;
+}
+
+#navbarNav .navbar-brand{
+    font-size: 30px;
+    font-weight: 800;
+    color: yellow;
+}
+#navbarNav ul > li a{
+    font-size: 20px;
+    font-weight: 800px;
+    color: white;
+    text-align: center;
+}
+.search  .searchField{
+    border:  1px solid #9999;
+    height: 10vh;
+}
+.search .searchForm{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.search .searchForm .typeSelected{
+    width:5vw;
+}
+.search .searchForm .keyword{
+    width: 30vw;
+}
+.bord{
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color:#9999;  
+    border-spacing:0 5px;
+}
+/* 버튼 클릭시 색바꿈 */
+.click a:link { text-decoration: none; color: #333; }
+.click a:visited { text-decoration: none; color: #333; }
+.click a:hover { text-decoration: none; color: #f33; }
+.click a:active { text-decoration: none; color: #f33; }
+    
+.silde .sildebar{
+
+    border:  0.5px solid #9999;
+    height: 25vh;
+}

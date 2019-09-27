@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* body{
+    margin-top:20px;
+    background-color:#e9ebee;
+} */
+
+h3 {
+   padding-left: 100px;
+}
+.h4_style {
+    font-size: 12px;
+    font-weight: bold;
+}
+.em_style {
+    color: red;
+}
+/* 제이쿼리 버튼 유의사항 */
+.beforeWithdraw{
+    display: none;
+}

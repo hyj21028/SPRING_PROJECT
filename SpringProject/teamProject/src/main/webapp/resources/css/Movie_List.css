@@ -1,0 +1,93 @@
+  /* 영화 리스트 회전목마 */
+  .visible{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }
+  #product-slider{
+    background-color: #e9ebee;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+  #product-slider .product-box img{
+    height: 15vh
+  }
+
+  .wordflex{
+    display: flex;
+  }
+
+  .wordflex .product-desc h3{
+    margin-left: 20px;
+    color: #484848;
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .wordflex .product-desc h4{
+    margin-top: 28px;
+    margin-left: 3px;
+    color: darkgrey;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  .product-box :hover{
+    background-color: #e9ebee;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: #3C3F39;
+    transform: scale(1.06); /*크기 확대 1.06 크기 */
+    transition: transform .5s; /*변형 속도*/
+  }
+
+ .jscarousal-horizontal{
+    width: 55vw;
+    overflow: hidden;
+    height: 17vh;
+    padding: 5px 5px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
+ .jscarousal-horizontal-back, .jscarousal-horizontal-forward{
+    float: left;
+    width: 23px;
+    position: relative;
+    top: 60px;
+    cursor: pointer;
+    color: #5D5D5D; 
+    font-size: 22px;
+  }
+  .jscarousal-horizontal-forward{
+    float: right;
+  }
+  .jscarousal-horizontal-back:before, .jscarousal-horizontal-forward:before{
+    font-family: FontAwesome;
+  }
+  .jscarousal-horizontal-back:before{
+    content: "\f053";
+  }
+  .jscarousal-horizontal-forward:before{
+    content: "\f054";
+  }
+  .jscarousal-contents-horizontal{
+    width: calc(100% - 50px);
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+  }
+  .jscarousal-contents-horizontal > .visible{
+    position: absolute;
+    width: 100%;
+  }
+  .jscarousal-contents-horizontal > .visible > .product-box{
+    float: left;
+    margin: 0px 1%;
+    width: 18%;
+  }
+  .jscarousal-contents-horizontal img{
+    width: 100%;
+  }

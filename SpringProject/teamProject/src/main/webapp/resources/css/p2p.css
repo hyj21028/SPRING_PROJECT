@@ -1,0 +1,125 @@
+body{
+    margin-top:20px;
+    background-color:#e9ebee;
+}
+
+/* 헤더 시작 */
+.main-page .container .top_header {
+    background-color: #5f6066;
+}
+.main-page .container .top_header .top_title {
+    color: white;
+    font-size: 15px;
+    padding-left: 10pt;
+}
+.main-page .container .ctView-container {
+    margin: 0; 
+    min-height:auto;
+}
+/* //헤더 끝 */
+/* 상단 고정 영역 시작 */
+.main-page .container .ctView-fixed {
+    position: static;
+}
+/* 영화 제목 시작 */
+/* .main-page .container .ctView-fixed .ctvTitle .title_txt {
+    width: 363px; 
+    font:bold; 
+    font-size: 20px;
+} */
+.ctLink   {
+    margin-left: 1030px;
+}
+/* //영화 제목 끝 */
+/* 판매 정보 수정 시작 */
+.ctInfo .ctTbl {
+    width: 100%; 
+    table-layout: fixed; 
+    border-top: 1px solid #e3e3e3; 
+    border-left: 1px solid #c1c1c1; 
+    border-right: 1px solid #c1c1c1; 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+}
+/* 판매 정보의 고정되는 테이블 번호&용량&포인트판매자 정보 시작 */
+.ctInfo .ctTbl .Info {
+    padding: 6px 0px 3px; 
+    padding-right: 0;
+    padding-left: 0;
+    letter-spacing: -1px;
+    text-align: center ;
+    background-color: #f8f8f8; 
+    font-size:11px; 
+    font-weight: normal; 
+    color: #999999;
+}
+/* //판매 정보의 고정되는 테이블 번호&용량&포인트판매자 정보 끝 */
+/* 판매 정보의 변환 되는 테이블 번호&용량&포인트판매자 정보 시작 */
+/* .ctInfo .ctTbl .num1 {
+    padding: 7px 0px 3px; 
+    color: #000; 
+    text-align: center;
+} */
+/* //판매 정보의 변환 되는 테이블 번호&용량&포인트&판매자 정보 끝 */
+/* 판매 정보 남은 포인트 시작 */
+/* .ctInfo .ctTbl .point .ctPoint {
+    color: #009ed6; 
+    font-weight: bolder; 
+    margin-left: 55px;
+} */
+/* //판매 정보 남은 포인트 끝 */
+/* 파일 목록 시작 */
+.ctInfo .ctTbl .file_mu {
+    text-align: center; 
+    letter-spacing: -1px; 
+    padding-top: 20px;
+    color: #999999;
+    background-color: white;
+}
+/* .ctInfo .ctTbl .file_mu .ctTd3 .ctListBox .boxSkin .file_namee {
+    padding-top: 20px;
+} */
+/* .capacity {
+    color: #999999;
+    padding-left: 589px;
+} */
+/* //파일 목록 끝 */
+/* //판매 정보 수정 끝 */
+/* 다운로드 버튼 시작 */
+.dw_btn {
+    padding-left: 450px; padding-top: 40px;
+
+}
+/* //다운로드 버튼 끝 */
+/* //상단 고정 영역 끝 */
+/* 컨텐츠 상세 시작 */
+.cteView .cte_inside {
+    overflow-x: hidden;
+}
+/* 저작권 설명글 시작 */
+.careMsg {
+    padding: 8px 0; font: 11px/14px Dotum; 
+    color: #8690a4; 
+    text-align: center; 
+    background: #f2f2f2;
+}
+/* 강조 텍스트 */
+.caMsg {
+    font-style: bold;
+}
+/* //저작권 설명글 끝 */
+/* 음란물 설명글 시작 */
+.guide_Msg {
+    padding: 13px 0 7px; 
+    font:normal 11px/14px Dotum; 
+    color: #444444; 
+    text-align: center; 
+    background: #f2f2f2;
+}
+/* 음란물 설명글 끝 */
+/* //컨텐츠 상세 끝 */
+
+/* a 태그 밑줄이 없이지지 않습니다.... ㅜㅜㅜ */
+a {
+    text-decoration: none;
+}
