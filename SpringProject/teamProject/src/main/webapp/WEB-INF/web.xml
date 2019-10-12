@@ -26,7 +26,7 @@
 		<load-on-startup>1</load-on-startup>
 		
 		<multipart-config>
-			<location>c:\\project\\file</location>
+			<location>/Users/HwangC/Downloads/upload</location>
 			<max-file-size>209715200</max-file-size> <!--1MB*200-->
 			<max-request-size>419430400</max-request-size>	<!--400MB-->
 			<file-size-threshold>209715200</file-size-threshold> <!--200MB-->

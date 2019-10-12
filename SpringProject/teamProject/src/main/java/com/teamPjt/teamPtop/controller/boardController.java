@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import com.teamPjt.teamPtop.domain.Criteria;
 import com.teamPjt.teamPtop.domain.SaveFile;
 import com.teamPjt.teamPtop.domain.boardVO;
@@ -49,7 +50,7 @@ public class boardController {
 	@Setter(onMethod_=@Autowired)
 	private ReplyService rservice;
 	//파일경로
-	private String uploadFolder="c:\\upload";
+	private String uploadFolder="/Users/HwangC/Downloads/upload";
 	
 	//메인호출
 	@RequestMapping("/main")
@@ -68,7 +69,15 @@ public class boardController {
 		}
 
 	}
-	
+//	@GetMapping("/list")
+//	public void List(Criteria cri, Model model) {
+//		log.info("list:" +cri);
+//		model.addAttribute("list", service.getList(cri));
+//		log.info("list"+service.getList(cri));
+//		model.addAttribute("pageMaker", new PageDTO(cri,service.getTotalCount(cri)));
+//		log.info("page"+new PageDTO(cri,service.getTotalCount(cri)));
+//	}
+//	
 	
 	//메인호출
 	@RequestMapping("/main/category")
@@ -133,7 +142,7 @@ public class boardController {
 	@ResponseBody
 	public ResponseEntity<Resource> downloadFile(String fileName){
 		log.info("download file : "+fileName);
-		Resource resource = new FileSystemResource("c:\\upload\\"+fileName);
+		Resource resource = new FileSystemResource("/Users/HwangC/Downloads/upload"+fileName);
 		log.info("resource : "+resource);
 		String resourceName = resource.getFilename(); 
 		HttpHeaders headers = new HttpHeaders();

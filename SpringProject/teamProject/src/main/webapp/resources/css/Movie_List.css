@@ -11,7 +11,7 @@
     border-radius: 10px;
   }
   #product-slider .product-box img{
-    height: 15vh
+    height: 10vh
   }
 
   .wordflex{
@@ -48,14 +48,14 @@
     padding: 5px 5px;
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 43%;
     transform: translate(-50%, -50%);
   }
  .jscarousal-horizontal-back, .jscarousal-horizontal-forward{
     float: left;
     width: 23px;
     position: relative;
-    top: 60px;
+    top: 50px;
     cursor: pointer;
     color: #5D5D5D; 
     font-size: 22px;

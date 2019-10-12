@@ -23,7 +23,7 @@
   
 </head>
 
-<body>
+<body style="background-color: #e9ebee;">
 
 <!-- 다운로드 폼 -->
 <div id="down-popup" class="down-popup" style="display:none;position: fixed;z-index: 1;left: 0;top: 0;width: 100%;height: 100%;
@@ -70,15 +70,15 @@
                     <!-- 제목 -->
                     <div class="ctvTitle">
                         <h2>
-                            <img src="http://image.ondisk.co.kr/images/popup/ctview_icon_partnership.gif" alt="제휴">
+                            <img src="/resources/image/partnership.gif" alt="제휴">
                             <span id="title_link" class="title_txt">
                                 <!-- [고화질] 사자 (The Divine Fury.2019.1080p.FHD) -->
                                 ${board.title }
                             </span>
                         </h2>
                         <p class="ctLink">
-                            <a href="" class="btnDibs"><img src="http://image.ondisk.co.kr/images/popup/ctview_btn_choice.gif"></a>
-                            <a href="" class="btnNotify"><img src="http://image.ondisk.co.kr/images/popup/ctview_btn_notify.gif" alt="신고"></a>
+                            <a href="" class="btnDibs"><img src="/resources/image/choice.gif"></a>
+                            <a href="" class="btnNotify"><img src="/resources/image/notify.gif" alt="신고"></a>
                         </p>
                     </div>
                     <!-- //제목 -->
@@ -255,17 +255,18 @@
         </div>
     </form>
 
-                
+              <div class="panel-footer"></div><!-- 댓글 페이지 영역  -->  
                 </div>
              <!-- //댓글 서비스 -->
         </div>
         <input type="hidden" id="nickname" value="${sessionScope.nickname }">
+         
     </header>
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  
+  	<script type="text/javascript" src="/resources/js/reply.js"></script>
     <script>
 		
    
@@ -335,35 +336,86 @@
             
     		});
             
-//             $("#deleteReply").on("click",function(e){
-//             	var rno='<c:out value="${value.rno}"/>';
-//             	e.preventDefault();
-//             	alert(rno+",,,,"+bno);
-//             	$.ajax({
-//             		type : 'post',
-//             		url : '/board/replydelete',
-//             		contentType : 'application/json',
-//             		data : JSON.stringify({
-//             			rno : rno ,
-//             			bno : bno
-//             			}),
-//             		success : function(result){
-//             			if(result =="success"){
-//                 			console.log();
-//                 			alert("댓글이 삭제 되었습니다.");
-//                 			commentList(bno);
-//             		}
-//             		}
-//             });
+           $("#deleteReply").on("click",function(e){
+             	var rno='<c:out value="${value.rno}"/>';
+             	e.preventDefault();
+             	alert(rno+",,,,"+bno);
+             	$.ajax({
+             		type : 'post',
+             		url : '/board/replydelete',
+             		contentType : 'application/json',
+            		data : JSON.stringify({
+             			rno : rno ,
+             			bno : bno
+             			}),
+            		success : function(result){
+            			if(result =="success"){
+                 			console.log();
+                 			alert("댓글이 삭제 되었습니다.");
+                 			commentList(bno);
+             		}
+             		}
+             });
             
-//             });
-
+            }); 
+         //댓글 페이지 번호 출력
+       	var pageNum = 1;
+       	var replyPageFooter = $(".panel-footer");
+       	
+       	function showReplyPage(replyCnt){
+       		var endNum = Math.ceil(pageNum/10.0)*10;
+       		var startNum = endNum -9;
+       		
+       		console.log("startNum:"+ startNum);
+       		
+       		var prev = startNum !=1;
+       		var next = false;
+       		
+       		if(endNum * 10 >= replyCnt){
+       			endNum = Math.ceil(replyCnt/10.0);
+       		}
+       		console.log("endNum" + endNum);
+       		if(endNum * 10 < replyCnt){
+       			next = true;
+       		}
+       		
+       		var str="<ul class='pagination pull-right'>";
+       		
+       		if(prev){
+       			str+= "<li class ='page-item'><a class='page-link' href='"+(startNum-1)+"'>Previous</a><li>";
+       		}
+       		
+       		for(var i = startNum; i <=endNum; i++){
+       			var active=pageNum==i?"active":"";
+       			str+= "<li class='page-item "+active +"'><a class='page-link' href='"+i+"'>"+i+"</a></li>";
+       		}
+       		if(next){
+       			str+= "<li class='page-item'><a class='page-link' href='"+(endNum+1)+"'>Next</a></li>";
+       		}
+       		
+       		str += "</ul></div>"
+       		
+       		console.log(str);
+       		replyPageFooter.html(str);
+       	}
+       	
+       	replyPageFooter.on("click","li a", function(e){
+       		 e.preventDefault();
+       		console.log("page click");
+       		
+       		var targetPageNum = $(this).attr("href");
+       		
+       		console.log("targetPageNum: " + targetPageNum);
+       		pageNum = targetPageNum;
+       		showList(pageNum);
+       	});
         	
         });
     </script>
     
-
+<script type="text/javascript" src="/resources/js/reply.js"></script>
 </body>
+
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->

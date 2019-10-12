@@ -27,4 +27,12 @@
 		$('#logout').click(function() {
 			location.href = "logout";
 		});
+		//회원 수 버튼
+		$('#reviseLink').click(function() {
+			location.href = "/memberRevise";
+		});
+		//회원 탈퇴 버튼
+		$('#deleteLink').click(function() {
+			location.href = "/withdraw";
+		});
 	});

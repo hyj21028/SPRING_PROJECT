@@ -1,6 +1,7 @@
 package com.teamPjt.teamPtop.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,6 +54,50 @@ public class SignUpController {
 		return "redirect:/board/main";
 	}
 	
+	
+	@GetMapping(value="/memberRevise")
+		public String memberReivise(){
+			return "/member/memberRevise";
+		}
+	
+	@PostMapping(value="/memberRevise")
+	public String memberRevise(@ModelAttribute("member") memberVO vo, RedirectAttributes rttr){
+		log.info("modify().."+vo);
+		if(service.memberRevise(vo)) {
+			rttr.addFlashAttribute("mno",vo.getMno());
+			rttr.addFlashAttribute("result","success");
+		}
+	
+		return "redirect:/board/main";
+	
+	}
+	@GetMapping(value="/withdraw")
+	public String withdraw(){
+		return "/member/withdraw";
+	}
+	
+	@PostMapping(value="/withdraw")
+	public String withdraw(@RequestParam(value="mno", required=false) int mno, RedirectAttributes rttr) {
+			log.info("remove()..."+mno);
+			if(service.withdraw(mno)){
+				
+				rttr.addFlashAttribute("mno", mno);
+				rttr.addFlashAttribute("result", "success");
+			}
+			return "redirect:/board/main";
+	
+	}
+	
+	
+	
+//	@PostMapping(value = "/remove")
+//	public String signUp(@ModelAttribute("member") memberVO vo) {
+//		
+//		service.signUp(vo);
+//		
+//		return "redirect:/board/main";
+//	}
+	
 	//produces는 ajax가 데이터 넘겨받을때 깨짐 방지
 	@GetMapping(value = "idCheck",consumes ="application/json", produces = {MediaType.TEXT_PLAIN_VALUE})
 	//public String idCheck(@ModelAttribute("vo") memberVO vo, Model model)throws Exception{
@@ -64,26 +109,26 @@ public class SignUpController {
 	}
 	
 	
-	@PostMapping("/modify")
-	public String modify(memberVO vo, RedirectAttributes rttr) {
-		log.info("modify().."+vo);
-		if(service.modify(vo)) {
-			rttr.addFlashAttribute("mno",vo.getMno());
-			rttr.addFlashAttribute("result","success");
-		}
-		return "redirect:main";
-	}
-	
-	@GetMapping("/remove")
-	public String remove(@RequestParam("mno") int mno, RedirectAttributes rttr) {
-		log.info("remove()..."+mno);
-		if(service.remove(mno)) {
-			rttr.addFlashAttribute("mno", mno);
-			rttr.addFlashAttribute("result", "success");
-		}
-		return "redirect:main";
-		
-	}
+//	@PostMapping("/modify")
+//	public String modify(memberVO vo, RedirectAttributes rttr) {
+//		log.info("modify().."+vo);
+//		if(service.modify(vo)) {
+//			rttr.addFlashAttribute("mno",vo.getMno());
+//			rttr.addFlashAttribute("result","success");
+//		}
+//		return "redirect:main";
+//	}
+//	
+//	@GetMapping("/remove")
+//	public String remove(@RequestParam("mno") int mno, RedirectAttributes rttr) {
+//		log.info("remove()..."+mno);
+//		if(service.remove(mno)) {
+//			rttr.addFlashAttribute("mno", mno);
+//			rttr.addFlashAttribute("result", "success");
+//		}
+//		return "redirect:main";
+//		
+//	}
 	
 //	@DeleteMapping(value="/{mno}", produces = {MediaType.TEXT_PLAIN_VALUE})
 //	public ResponseEntity<String> remove(@PathVariable("mno") int mno){

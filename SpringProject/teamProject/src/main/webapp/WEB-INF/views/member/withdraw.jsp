@@ -8,13 +8,13 @@
     <div class="container bootstrap snippet">
         <div class="row">
             <!--/col-3-->
-            <div class="col-sm-9">
+            <div class="col-sm-9" id="withdrawFrame" style="margin-top:20vh">
                 <ul class="nav nav-tabs">
                     <!-- 회원 탈퇴 클릭 시 -->
                     <li class="active"><a data-toggle="tab" href="#home">회원탈퇴</a></li>
                 </ul>
                 <!-- 회원 탈퇴 시 유의 사항 배너 -->
-                <h3><img src="http://image.ondisk.co.kr/images/myPage/withdrawal_h3.gif"></h3>
+           <!--      <h3><img src="/resources/image/withdrawal.jpg"></h3> -->
                 <br>
                 <br>
                 <!-- 제이쿼리 온 / 오프 버튼 -->
@@ -68,14 +68,14 @@
                     <div class="tab-pane active" id="home">
                         <hr>
                         
-                        <form class="form" action="##" method="post" id="registrationForm_del">
+                        <form class="form" action="withdraw" method="post" id="registrationForm_del">
                             <!-- 아이디는 입력 -->
                             <div class="form-group_del">
                                 <div class="col-xs-6">
                                     <label for="id">
                                         <h4>아이디</h4>
                                     </label>
-                                    <input type="text" class="form-control" name="userId" value="" readonly>
+                                    <input type="text" class="form-control" name="id" id="id" value="${member.id }">
                                 </div>
                             </div>
                             <!-- 비밀번호 입력 -->
@@ -84,16 +84,16 @@
                                     <label for="password">
                                         <h4>비밀번호</h4>
                                     </label>
-                                    <input type="password" class="form-control" name="userPwd" id="userPwd" placeholder="password">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
                                 </div>
                             </div>
                             <!-- 탈퇴 / 리셋 / 취소 버튼 활성화와 클릭 시 출력 되는 메시지 -->
                             <div class="form-group_del">
                                 <div class="col-xs-12">
                                     <br>
-                                    <a href="#"><button class="btn btn-lg btn-success" onclick="javascript:alert('탈퇴가 완료되었습니다.')"><i class="glyphicon glyphicon-ok-sign"></i> 그래도 탈퇴하시겠습니까?</button></a>
+                                  <button class="btn btn-lg btn-success" type="submit" onclick="javascript:alert('탈퇴가 완료되었습니다.')"><i class="glyphicon glyphicon-ok-sign"></i> 그래도 탈퇴하시겠습니까?</button></a>
                                     <button class="btn btn-lg btn-info" type="reset"><i class="glyphicon glyphicon-repeat"></i> 초기화</button>
-                                    <a href="#"><button class="btn btn-lg btn-warning" onclick="javascript:alert('취소 되었습니다.')"><i class="glyphicon glyphicon-remove-sign"></i> 취소</button></a>
+                                    <button class="btn btn-lg btn-warning" onclick="javascript:alert('취소 되었습니다.')"><i class="glyphicon glyphicon-remove-sign"></i> 취소</button></a>
                                 </div>
                             </div>
                         </form>
@@ -103,4 +103,25 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    function doDisplay(){
+        var con = document.getElementById("withdraw");
+        if(con.style.display=='none'){ 
+            con.style.display = 'block';
+        }else{
+            con.style.display = 'none';
+        }
+    }
+    $(document).ready(function(e){
+
+       $('#letsWithdraw').click(function(){
+          if($.trim($('#userPwd').val()) == ''){
+             alert("패스워드 입력");
+             $('#userPwd').focus(); //마우스 클릭해서 포커스가지기
+             return;
+          }
+       });
+       
+    });
+</script>
  <%@ include file ="../include/footer.jsp" %>

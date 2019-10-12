@@ -59,7 +59,7 @@
 /* 로그인 창 끝 */
 /* 로그인 밑 메뉴 */
 .asidePage .sideField #nonSelectedMenu{
-  display: none;
+ display: block;
   width: 10vw;
   margin-left: 6vw;
 }
@@ -108,37 +108,37 @@
 }
 
 /* 사이드바 위치 조정 */
-.sideField #selectMenu .navbar_sidebar {
+.sideField2 #selectMenu .navbar_sidebar {
   position: absolute; 
   left: 40%; 
   top: 10%;
 }
 /* 사이드바 전체적인 디자인 */
-#selectMenu .sidebar_navbar_collapse {
+.sideField2 #selectMenu .sidebar_navbar_collapse {
   height:0px; 
   width: 211px; 
   line-height:1em;
 }
 /* 사이드바 메뉴 */
- #selectMenu i {
+ .sideField2 #selectMenu i {
   color: #666666;
   font-size: 12px; 
   text-decoration: none;
   font-style: inherit; 
 }
 /* 보더 스타일 */
- #selectMenu .nav {
+ .sideField2 #selectMenu .nav {
   border: 1px solid #dadada;
 }
 /* 마우스 포인터 */
- #selectMenu .side_adult_link {
+ .sideField2 #selectMenu .side_adult_link {
   cursor: pointer;
   border: 0;
 }
- #selectMenu .side_point_link {
+ .sideField2 #selectMenu .side_point_link {
   cursor: pointer;
 }
-#selectMenu .side_banner_link {
+.sideField2 #selectMenu .side_banner_link {
   width: 100%;
   cursor: pointer;
 }
@@ -147,7 +147,7 @@
 /* 회원수정 */
 
 .asidePage .memberReivse #ReviseMenu{
-  display: block;
+ display: none; 
   width: 10vw;
   border:  1px solid #9999;
   margin-left: 6vw;

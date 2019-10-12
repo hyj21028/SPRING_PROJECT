@@ -6,20 +6,20 @@
 
         <div class="row">
             <!--/col-3-->
-            <div class="col-sm-9">
+            <div class="col-sm-9" id="reviseFrame" style="margin-top:20vh">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">정보수정</a></li>
+                    <li class="active"><a data-toggle="tab" href="/member/memberRevise">정보수정</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">
                         <hr>
-                        <form class="form" action="/update" method="post" id="registrationForm">
+                        <form class="form" action="memberRevise" method="post" id="registrationForm">
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <label for="id">
                                         <h4>아이디</h4>
                                     </label>
-                                    <input type="text" class="form-control" name="userId" value="${member.id }" readonly>
+                                    <input type="text" class="form-control" name="id" id="id" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -27,7 +27,7 @@
                                     <label for="password">
                                         <h4>비밀번호</h4>
                                     </label>
-                                    <input type="password" class="form-control" name="userPwd" id="userPwd" placeholder="password">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -35,17 +35,15 @@
                                     <label for="name">
                                         <h4>이름</h4>
                                     </label>
-                                    <input type="text" class="form-control" name="userName" id="userName" placeholder="name">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="name">
                                 </div>
                             </div>
-                            <div class="form-group">
+                        <div class="form-group">
                                 <div class="col-xs-6">
-                                    <label for="password_ok">
-                                        <h4>비밀번호 확인</h4>
-                                        <!-- <div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>
-                                        <div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div> -->
+                                    <label for="name">
+                                        <h4>닉네임</h4>
                                     </label>
-                                    <input type="password" class="form-control" name="userPwdOk" id="userPwdOk" placeholder="password">
+                                    <input type="text" class="form-control" name="nickname" id="nickname" placeholder="nickname">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -61,7 +59,7 @@
                                     <br>
                                     <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> 저장</button>
                                     <button class="btn btn-lg btn-danger" type="reset"><i class="glyphicon glyphicon-repeat"></i> 초기화</button>
-                                    <input type="button" class="btn btn-lg btn-info" onclick="mainBack();"><i class="glyphicon glyphicon-repeat"></i> 뒤로가기
+                                    <button class="btn btn-lg btn-info" id="mainBack"><i class="glyphicon glyphicon-repeat"></i> 뒤로가기</button>
                                 </div>
                             </div>
                         </form>
@@ -71,4 +69,10 @@
             </div>
         </div>
     </div>
+    
+    <script>
+    $('#mainBack').click(function() {
+		location.href = "/board/main";
+	});
+    </script>
 <%@ include file="../include/footer.jsp" %>

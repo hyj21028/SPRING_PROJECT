@@ -11,14 +11,14 @@
 	</select>
 	<insert id="register">
 		insert into tbl_file(fno, filename, bno)
-		values(seq_file_board.nextval, #{filename},#{bno})
+		values(seq_file.nextval, #{filename},#{bno})
 	</insert>
-<!-- 	<delete id="delete"> -->
-<!-- 		delete from save_file where fno=#{fno} -->
-<!-- 	</delete> -->
-<!-- 	<delete id="deleteList"> -->
-<!-- 		delete from save_file where bno=#{bno} -->
-<!-- 	</delete> -->
+	<delete id="delete"> 
+		delete from tbl_file where fno=#{fno}
+	</delete>
+	<delete id="deleteList"> 
+		delete from tbl_file where bno=#{bno}
+	</delete>  
 	
 
 </mapper>

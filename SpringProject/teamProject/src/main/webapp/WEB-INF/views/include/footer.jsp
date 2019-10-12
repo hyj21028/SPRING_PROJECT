@@ -77,6 +77,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://nicesnippets.com/demo/jsCarousel-2.0.0.js" type="text/javascript"></script>
+
 <!-- <script src="/resources/js/signUp.js" type="text/javascript"></script> -->
 <!-- <script src="/resources/js/memberRevise.js" type="text/javascript"></script> -->
 <!-- <script src="/resources/js/withdraw.js" type="text/javascript"></script> -->

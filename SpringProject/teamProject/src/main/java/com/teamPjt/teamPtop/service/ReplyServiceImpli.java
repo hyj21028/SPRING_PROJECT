@@ -62,11 +62,12 @@ public class ReplyServiceImpli implements ReplyService {
 		return rMapper.getList( bno);
 	}
 
-//	
-//	@Override
-//	public ReplyPageDTO getListPaging(Criteria cri, int bno) {
-//		// TODO Auto-generated method stub
-//		return new ReplyPageDTO(rMapper.getCountBno(bno), rMapper.getListPaging(cri, bno));
-//	}
+
+	
+	@Override
+	public ReplyPageDTO getListPage(Criteria cri,int bno) {
+		// TODO Auto-generated method stub
+		return new ReplyPageDTO(rMapper.getCountBno(bno), rMapper.getListWithpaging(cri, bno));
+	}
 
 }

@@ -36,14 +36,14 @@ public class SignUpServiceImpli implements SignUpService {
 	}
 
 	@Override
-	public boolean modify(memberVO vo) {
+	public boolean memberRevise(memberVO vo) {
 		// TODO Auto-generated method stub
 		log.info("modify...."+vo);
 		return sMapper.update(vo) ==1;
 	}
 
 	@Override
-	public boolean remove(int mno) {
+	public boolean withdraw(int mno) {
 		// TODO Auto-generated method stub
 		log.info("remove...."+mno);
 		return sMapper.delete(mno) == 1;

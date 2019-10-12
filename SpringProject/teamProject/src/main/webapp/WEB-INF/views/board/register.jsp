@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+
 <head>
+ <title>ONDISK</title>
 <meta charset="UTF-8">
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
@@ -13,7 +17,6 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 
-<title>Insert title here</title>
 
 
 </head>
@@ -31,8 +34,9 @@
       <option>음악</option>
       <option>유틸</option>
      </select> </td> </tr>
+<tr><td>작성자</td><td><input type="text" name="writer" value="${member.id }"></td></tr>
 <tr><td>내용</td><td><textarea id="summernote" name="content"></textarea></td></tr>
-<!-- <tr><td>작성자</td><td><input type="text" name="writer"></td></tr> -->
+
 </table>
 <div class="text-center">
 <h3 class="bg-light">파일등록</h3><div class="file-upload-wrapper btn btn-primary"> <input type="file"  name="uploadFile" multiple/> </div>

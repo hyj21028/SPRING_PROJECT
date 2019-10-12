@@ -12,5 +12,5 @@ public interface ReplyService {
 	public int modify(ReplyVO vo);
 	public int remove(ReplyVO vo);
 	public List<ReplyVO> getList( int bno);
-//	public ReplyPageDTO getListPaging(Criteria cri, int bno);
+	public ReplyPageDTO getListPage(Criteria cri, int bno);
 }

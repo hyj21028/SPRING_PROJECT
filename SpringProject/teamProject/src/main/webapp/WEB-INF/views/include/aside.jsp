@@ -17,14 +17,14 @@
                                      <c:when test="${sessionScope.id == null }">
                                     <div class="txtId">
                                         <div class="Id_logo">
-                                            <img src="resources/image/user.svg" width="16px" alt="">
+                                            <img src="/resources/image/user.svg" width="16px" alt="">
                                         </div>
                                         <input type="text" name="userId" class="login_id" id="userId" placeholder="아이디"
                                             maxlength="20">
                                     </div>
                                     <div class="txtPwd">
                                         <div class="Pwd_logo">
-                                            <img src="resources/image/lock.svg" width="16px" alt="">
+                                            <img src="/resources/image/lock.svg" width="16px" alt="">
                                         </div>
                                         <input type="password" name="userPwd" class="login_pwd" id="userPwd"
                                             placeholder="비밀번호" maxlength="20">
@@ -33,7 +33,7 @@
                                     
                                     <div class="btnGroup">
                                         <div class="btnLogin">
-                                            <input type="button" class="btn btn-outline-danger btn-sm" id="loginBtn" value="로그인">
+                                            <input type="button" class="btn btn-outline-danger btn-sm" id="loginBtn" onclick="loginId"value="로그인">
                                         </div>
                                         <div class="btnJoin">
                                             <a  class="btn btn-outline-primary btn-sm" id="signUp"
@@ -82,8 +82,7 @@
                             <li>
                                 <a href="#"><img class="side_banner_link" src="/resources/image/link_7.jpg"></a>
                             </li>
-                            <div class="main-customer"><img src="/image/link_8.gif" alt="고객센터 1599 - 6221">
-                            </div>
+                            <div class="main-customer"><img src="/resources/image/link_8.gif" alt="고객센터 1599 - 6221"></div>
                             <div class="main-request">
                                 <ul class="btn">
                                     <li class="btn-l" style="float:left;"><a href="#"><img src="/resources/image/link_9.gif"
@@ -108,7 +107,7 @@
                         <ul class="nav" id="side-menu">
                             <!-- 19 성인 자료실 -->
                             <li>
-                                <img class="side_adult_link" style="border: none;" img src="/resources/image/banner_4.gif">
+                                <img class="side_adult_link" style="border: none;" img src="/resources/image/banner_4.gif" onclick="myPage()">
                             </li>
                             <!-- 파일 공유 박스 -->
                             <li>
@@ -147,7 +146,7 @@
                             <li>
                                 <a href=""><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"
                                             aria-hidden="true"></span> IT디스크 기획전&nbsp;&nbsp;&nbsp;<img
-                                            src="resources/image/new_img.gif"></i></a>
+                                            src="/resources/image/new_img.gif"></i></a>
                             </li>
                             <!-- 방송 편성표 링크 -->
                             <li>
@@ -158,13 +157,13 @@
                             <li>
                                 <a href=""><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"
                                             aria-hidden="true"></span> 시청률정보&nbsp;&nbsp;&nbsp;<img
-                                            src="resources/image/new_img.gif"></i></a>
+                                            src="/resources/image/new_img.gif"></i></a>
                             </li>
                             <!-- 요일별 편성표 링크 -->
                             <li>
                                 <a href=""><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"
                                             aria-hidden="true"></span> 요일별 편성표&nbsp;&nbsp;&nbsp;<img
-                                            src="resources/image/new_img.gif"></i></a>
+                                            src="/resources/image/new_img.gif"></i></a>
                             </li>
                             <!-- IT 디스크 TOP100 링크 -->
                             <li>
@@ -201,19 +200,37 @@
                             <li>
                                 <img class="side_adult_link" style="border: none;" img src="/resources/image/myPage.gif">
                             </li>
-<!--                             <li> -->
-<!--                                 <a href=""><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"></span> -->
-<!--                                         회원수정</i></a> -->
-<!--                             </li> -->
-<!--                             <li> -->
-<!--                                 <a href=""><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"></span> -->
-<!--                                         회원탈퇴</i></a> -->
-<!--                             </li> -->
-<!--                         </ul> -->
+                          <li> 
+                                <a href="/member/memberRevise" id="modify"><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"></span>
+                                        회원수정</i></a>
+                            </li>
+                            <li>
+                                <a href="/member/withdraw" id="remove"><i class="sub_Link"><span class="glyphicon glyphicon-menu-right"></span>
+                                        회원탈퇴</i></a>
+                            </li>
+                        </ul>
+                    </div>
                     </div>
             </fieldset>
         </div>
     </aside>
     
+<script type="text/javascript"> 
+	function loginId(){
+		document.getElementById("sideField").style.display = "none";
+		document.getElementById("sideField2").style.display = "block";
+		
+	}
+	function logoutId(){
+		document.getElementById("sideField").style.display = "block";
+		document.getElementById("sideField2").style.display = "none";
+	}
+	function myPage(){
+		document.getElementById("sideField").style.display = "none";
+		document.getElementById("sideField2").style.display = "none";
+		document.getElementById("memberReivse").style.display = "block";
+	}
+</script>
+<!--
 
     <!-- aside end -->

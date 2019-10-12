@@ -15,12 +15,12 @@
 			VALUES (seq_member.nextval, #{id},#{password},#{nickname},#{name},#{mail})
 		]]>
 	</insert>
-  	<update id="update">
-  		UPDATE tbl_member(password, nickname, mail)
-		SET password={#password}, nickname={#nickname}, mail={#mail} where mno = #{mno} 
+  	<update id="update"  parameterType="int">
+  		UPDATE tbl_member
+		SET id = #{id}, password=#{password}, name=#{name}, nickname=#{nickname}, mail=#{mail} where mno = #{mno} 
   	</update>
-  	<delete id="delete">
-  		DELETE FROM tbl_member where mno ={#mno}
+  	<delete id="delete"  parameterType="int">
+  		DELETE FROM tbl_member where mno = #{mno}
   	</delete>
   	
   </mapper>

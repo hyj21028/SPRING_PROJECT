@@ -11,10 +11,10 @@ public interface SignUpService {
 	public void signUp(memberVO vo);
 	
 	//회원 정보 수정
-	public boolean modify(memberVO vo);
+	public boolean memberRevise(memberVO vo);
 	
 	//회원 정보 삭제
-	public boolean remove(int mno);
+	public boolean withdraw(int mno);
 
 	
 }

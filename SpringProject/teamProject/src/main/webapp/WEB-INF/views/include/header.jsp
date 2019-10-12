@@ -25,7 +25,7 @@
             <div><a class="cursor" href=""><img src="/resources/image/LOGO.PNG" style="height:80px" alt="" srcset=""></a></div>
             <nav class="navbar navbar-expand-lg navbar-light bg-primary">
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <a class="navbar-brand" href="#">ITDISK</a>
+                    <a class="navbar-brand" href="/board/main">ITDISK</a>
                     <ul class="navbar-nav cursor">
                         <li class="nav-item"><a class="nav-link glyphicon glyphicon-inbox" href="">TOP 100</a></li>
                         <li class="nav-item"><a class="nav-link glyphicon glyphicon-book" href="">FILESHARE </a></li>
