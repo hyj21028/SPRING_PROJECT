@@ -106,7 +106,7 @@ public class boardController {
 		
 		//파일 서버저장 처리
 		List<SaveFile> fileList=new ArrayList<SaveFile>();
-		UUID uuid=UUID.randomUUID();
+		UUID uuid=UUID.randomUUID(); //동일한 이름의 파일을 업로드시 기존 파일을 삭제 할 수 있으므로 java.util.UUID의 값 사용
 		for(MultipartFile multipartFile : uploadFile) {
 			String fileName=multipartFile.getOriginalFilename();
 			fileName=uuid+"_"+fileName;
