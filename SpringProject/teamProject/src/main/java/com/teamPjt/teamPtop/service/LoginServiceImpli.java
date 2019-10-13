@@ -18,7 +18,7 @@ import lombok.extern.java.Log;
 @AllArgsConstructor
 public class MemberServiceImpli implements MemberService {
 	
-	@Autowired
+	@Autowired //타입에 맞는 loC컨테이너 안에 존재하는 Bean을 자동으로 주입
 	 MemberMapper mMapper;
 	
 	
