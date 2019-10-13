@@ -8,11 +8,11 @@ var replyService=(function(){
    function add(reply, callback, error){
       console.log("add reply...")
       $.ajax({
-         type:'post',
-         url:'/reply/new',
-         data :JSON.stringify(reply),
-         contentType:"application/json;charset=utf-8",
-         success:function(result,status, xhr){
+         type:'post', //HTTP 요청 메소드
+         url:'/reply/new', //클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+         data :JSON.stringify(reply), //HTTP 요청과 함께 서버로 보낼 데이터, 성공적으로 값을 보냈을 경우 처리
+         contentType:"application/json;charset=utf-8", 
+         success:function(result,status, xhr){ //요청이 성공일때 실행되는 callback 함수
             if(callback){
                callback(result)
             }
