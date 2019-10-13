@@ -101,7 +101,7 @@ public class boardController {
 	//글작성후 처리
 	@PostMapping("/register")
 	public String register(MultipartFile[] uploadFile,
-			@ModelAttribute("board") boardVO board) {
+			@ModelAttribute("board") boardVO board) {//MultipartFile: 업로드 한 파일 및 파일 데이터를 표현하기 위한 용도
 		log.info("board:"+board);
 		
 		//파일 서버저장 처리
@@ -143,6 +143,7 @@ public class boardController {
 	public ResponseEntity<Resource> downloadFile(String fileName){
 		log.info("download file : "+fileName);
 		Resource resource = new FileSystemResource("/Users/HwangC/Downloads/upload"+fileName);
+		//FileSystemResource: 파일시스템의 특정 파일로 부터 정보를 읽어옴
 		log.info("resource : "+resource);
 		String resourceName = resource.getFilename(); 
 		HttpHeaders headers = new HttpHeaders();
